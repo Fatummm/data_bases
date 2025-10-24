@@ -43,6 +43,7 @@ AND amount < NUMERIC(10, 2) '10000.00';
 ```sql
 SELECT scheduled_departure::date, COUNT(*) FROM flights
 WHERE EXTRACT(MONTH FROM scheduled_departure) = 8
+AND status = 'Delayed'
 GROUP BY scheduled_departure::date;
 ```
 **Пояснение**
